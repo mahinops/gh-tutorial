@@ -11,9 +11,12 @@ on:
 jobs:
   get-value-workflow-job:
     runs-on: ubuntu-latest
+    outputs:
+      greetings-message: ${{ steps.generate-message.outputs.message }}
 
     steps:
       - name: Generate Greetings Message
+        id: generate-message
         run: |
           echo "message=Hello, ${{ github.event.inputs.name }}!" >> GITHUB_OUTPUT
 
@@ -25,4 +28,4 @@ jobs:
     steps:
       - name: Print Greetings Message
         run: |
-          echo "${{ needs.get-value-workflow-job.outputs.message }}"
+          echo "${{ needs.get-value-workflow-job.outputs.greetings-message }}"
