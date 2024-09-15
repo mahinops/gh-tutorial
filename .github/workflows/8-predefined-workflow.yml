@@ -1,0 +1,12 @@
+name: Predefined Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  predefined-workflow:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: NodeJs Version
+        run: node -v
