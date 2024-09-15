@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  first-workflow-job:
+  multi-jobs-workflow:
     runs-on: ubuntu-latest
 
     steps:
